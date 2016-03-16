@@ -1,3 +1,4 @@
+function GCOPT=GCOPT_MAIN
 clc;clearvars; 
 format long;
 
@@ -116,6 +117,9 @@ end
 Answer_Table = array2table(Answer,...
     'VariableNames',{'STATE' 'X_MW' 'P_PRIME_X_MW' 'XC_MW' 'P_PRIME_XC' 'PX'});
  disp(Answer_Table);
+ 
+GCOPT=Answer_Table;
+end
 
 
 
