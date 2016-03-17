@@ -1,0 +1,18 @@
+function [basecase\LOLE] = BasecaseLOLE(GCOPT,peakloaddata)
+systemcap=450; 
+reserve=zeros(12,1);
+LOLE=zeros(12,1);
+for i=1:12
+    reserve(i,1)=systemcap-peakloaddata(i,2);
+    for n=1:size(GCOPT,1)
+        if reserve(i,1)== GCOPT(n,2)
+            LOLE(i,1)=GCOPT(n,6);
+            break;
+        elseif reserve(i,1)<GCOPT(n,2)
+            LOLE(i,1)=GCOPT(n,6);
+            break;
+        end
+    end
+end 
+basecaseLOLE=sum(LOLE);
+LOLE
