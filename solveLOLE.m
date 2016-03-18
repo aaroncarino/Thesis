@@ -1,5 +1,5 @@
 function [LOLE] = solveLOLE(GCOPT,peakloaddata)
-systemcap=450; 
+systemcap=1050; 
 reserve=zeros(12,1);
 ans=zeros(12,1);
 for i=1:12
@@ -15,5 +15,4 @@ for i=1:12
     end
 end 
 LOLE=sum(ans);
-ans
 end
